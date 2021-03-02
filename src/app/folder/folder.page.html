@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -8,14 +8,82 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="balance-card">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="315" height="120"
+      viewBox="0 0 315 120">
+      <defs>
+        <clipPath id="clip-path">
+          <rect id="Mask" width="315" height="120" rx="20" fill="#26c165" />
+        </clipPath>
+      </defs>
+      <rect id="Mask-2" data-name="Mask" width="315" height="120" rx="20" fill="#26c165" />
+      <g id="Balance_Card-2" data-name="Balance Card" clip-path="url(#clip-path)">
+        <circle id="Oval" cx="60" cy="60" r="60" transform="translate(-30 -48)" fill="#41cc78" />
+        <circle id="Oval_Copy" data-name="Oval Copy" cx="40" cy="40" r="40" transform="translate(293 -36)"
+          fill="#41cc78" />
+        <circle id="Oval_Copy_2" data-name="Oval Copy 2" cx="40" cy="40" r="40" transform="translate(142 107)"
+          fill="#41cc78" />
+        <text id="Total_balance_:_135" data-name="Total balance : $135" transform="translate(82 89)" fill="#fff"
+          font-size="14" font-family="Rubik-Regular, Rubik">
+          <tspan x="0" y="0">Total balance : $135.00</tspan>
+        </text>
+        <text id="_20.00" data-name="$ 20.00" transform="translate(91 61)" fill="#fff" font-size="36"
+          font-family="Rubik-Light, Rubik" font-weight="300">
+          <tspan x="0" y="0">$</tspan>
+          <tspan y="0" xml:space="preserve" font-family="Rubik-Medium, Rubik" font-weight="500"> 20.00</tspan>
+        </text>
+      </g>
+    </svg>
   </div>
+  <div class="content">
+    <div class="charge-title">
+      <ion-text>
+        <ion-label position="stacked">Amount</ion-label>
+      </ion-text>
+      <ion-item color="drak">
+        <ion-input placeholder="20.00"></ion-input>
+      </ion-item>
+    </div>
+    <div class="charges">
+      <ion-row>
+        <ion-col *ngFor="let price of items;">
+          <ion-button color="primary">
+            <ion-label>$ {{ price }}</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="charge-title">
+      <ion-text color="drak">
+        <ion-label>Items</ion-label>
+      </ion-text>
+    </div>
+    <ion-list>
+      <div class="scroll" *ngFor="let item of items;">
+        <div class="scroll-item">
+          {{ item }}
+        </div>
+      </div>
+    </ion-list>
+    <div class="charge-title">
+      <ion-text color="drak">
+        <ion-label>Customer</ion-label>
+      </ion-text>
+    </div>
+    <ion-list>
+      <div class="scroll" *ngFor="let item of items;">
+        <div class="user-avatar">
+          <ion-avatar>
+            <img
+              src="https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png">
+          </ion-avatar>
+        </div>
+      </div>
+    </ion-list>
+
+    <div class="continue-button">
+      <ion-button shape="round" fill="outline">Continue</ion-button>
+    </div>
+  </div>
+
 </ion-content>

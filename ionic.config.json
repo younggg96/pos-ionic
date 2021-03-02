@@ -1,5 +1,6 @@
 {
   "name": "pos",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "id": "b8089e8e"
 }

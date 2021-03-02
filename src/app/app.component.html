@@ -1,26 +1,49 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
+      <div class="menu-header">
+        <svg class="menu-header" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="250" height="114" viewBox="0 0 250 114">
+          <path id="Path"
+            d="M94.361,34.723C56.617,32.735,15.727,46.867,0,54.181v58.375H300.467V2.016c-10.245-2.695-35.324-7.131-60.011,20.7-26.073,29.394-50.63,31.878-61.666,29.394C151.31,44.874,132.106,36.71,94.361,34.723Z"
+            transform="translate(0 1.908)" fill="#4cd080" opacity="0.6" />
+          <path id="Path-2" data-name="Path"
+            d="M225.229,18.9c55.148,9.92,72.5-8.464,74.284-18.9V86.8H0V4.133c3.368-3.74,17.234-5.2,45.759,18.9s61.283,27.113,76.067,15.943C133.314,28.147,170.08,8.975,225.229,18.9Z"
+            transform="translate(0.954 27.662)" fill="#4cd080" opacity="0.6" />
+          <g id="Shapes" transform="translate(13.834 13.566)">
+            <rect id="Rectangle" width="19.077" height="4.07" rx="2.035"
+              transform="translate(181.885 13.49) rotate(-45)" fill="#fff" />
+            <rect id="Rectangle-2" data-name="Rectangle" width="19.077" height="4.07" rx="2.035"
+              transform="translate(195.375 16.367) rotate(-135)" fill="#fff" />
+            <path id="Shape" d="M0,9.539a9.539,9.539,0,1,1,9.539,9.539A9.539,9.539,0,0,1,0,9.539Z"
+              transform="translate(0 42.991)" fill="#fff" />
+            <path id="Shape-2" data-name="Shape" d="M0,4.77A4.769,4.769,0,1,1,4.77,9.539,4.769,4.769,0,0,1,0,4.77Z"
+              transform="translate(149.601 77.499)" fill="#fff" />
+            <rect id="Rectangle-3" data-name="Rectangle" width="9.539" height="2.035" rx="1.017"
+              transform="translate(42.228 9.307) rotate(-45)" fill="#fff" />
+            <rect id="Rectangle-4" data-name="Rectangle" width="9.539" height="2.035" rx="1.017"
+              transform="translate(48.972 10.746) rotate(-135)" fill="#fff" />
+          </g>
+          <text id="Go_Premium" data-name="Go Premium" transform="translate(80 44)" fill="#fff" font-size="18"
+            font-family="Rubik-Medium, Rubik" font-weight="500">
+            <tspan x="0" y="0">Go Premium</tspan>
+          </text>
+          <text id="Upgrade_to_premium_" data-name="Upgrade to premium," transform="translate(80 66)" fill="#fff"
+            font-size="13" font-family="Rubik-Regular, Rubik">
+            <tspan x="0" y="0">Upgrade to premium,</tspan>
+            <tspan x="0" y="15">get more profit now!</tspan>
+          </text>
+        </svg>
+      </div>
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon [ios]="p.icon + '-outline'" [md]="p.icon + '-outline'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>
